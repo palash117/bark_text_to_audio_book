@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Bark TTS Player
+Comment=Type text, hear it spoken, browse playback history
+Exec=python3 /home/ub/dev/bark/main.py
+Icon=audio-x-generic
+Terminal=false
+Categories=AudioVideo;Utility;
