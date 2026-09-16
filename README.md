@@ -30,6 +30,20 @@ For the espeak-ng voice options (optional, Piper works without it):
 sudo apt-get install -y espeak-ng
 ```
 
+## Debian package
+
+To build a self-contained `.deb` (bundles Piper + the voice model, so
+installing it needs no further downloads):
+
+```bash
+./build_deb.sh
+sudo apt install ./build/bark-tts-player_1.0.0_amd64.deb
+```
+
+This installs the app to `/opt/bark-tts-player`, adds a `bark-tts-player`
+launcher to your `PATH`, and registers it in the application menu using
+`app.png` as the icon.
+
 ## Files
 
 - `main.py` — entry point
@@ -38,4 +52,6 @@ sudo apt-get install -y espeak-ng
 - `player.py` — GStreamer playback (play/pause/seek/speed)
 - `history.py` — JSON-backed clip history (`~/.local/share/bark-tts/`)
 - `setup.sh` — downloads Piper + voice model (not committed; see `.gitignore`)
-- `bark.desktop` — optional app-menu launcher
+- `build_deb.sh` — builds a self-contained Debian package (`build/*.deb`, not committed)
+- `app.png` — app icon, used both by `bark.desktop` and the Debian package
+- `bark.desktop` — optional app-menu launcher (for a non-packaged checkout)
